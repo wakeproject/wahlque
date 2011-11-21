@@ -3,10 +3,10 @@
 
   util methods for url handling
 ###
-define 'cs!url', ["exports"], (url) ->
+define 'cs!url', ['exports'], (exports) ->
 
     # get all params
-    url.params = (url) ->
+    exports.params = (url) ->
         ps = {}
         a = /\+/g
         r = /([^&=]+)=?([^&]*)/g
