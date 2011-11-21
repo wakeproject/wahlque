@@ -1,3 +1,8 @@
+###
+  vector3.coffee
+
+  3-dimention vector
+###
 define 'cs!vector3', ["exports"], (v3) ->
 
     # null vector
