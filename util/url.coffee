@@ -10,9 +10,11 @@ define 'cs!/wahlque/util/url', ['exports'], (exports) ->
         ps = {}
         a = /\+/g
         r = /([^&=]+)=?([^&]*)/g
-        d = (s) -> decodeURIComponent(s.replace(a, " "))
+        d = (s) -> decodeURIComponent(s.replace(a, ' '))
         q = url ? window.location.search.substring(1)
         while (e = r.exec(q))
             ps[d(e[1])] = d(e[2])
         ps
+
+    exports
 
