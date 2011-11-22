@@ -3,7 +3,7 @@
 
   util methods for url handling
 ###
-define 'cs!url', ['exports'], (exports) ->
+define 'cs!/wahlque/util/url', ['exports'], (exports) ->
 
     # get all params
     exports.params = (url) ->
