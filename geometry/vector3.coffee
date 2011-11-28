@@ -3,7 +3,7 @@
 
   3-dimention vector
 ###
-define 'cs!vector3', ["exports"], (v3) ->
+define 'cs!/wahlque/geometry/vector3', ['exports'], (v3) ->
 
     # null vector
     v3.ZERO = {
