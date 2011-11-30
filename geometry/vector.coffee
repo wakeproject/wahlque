@@ -37,3 +37,6 @@ define 'cs!/wahlque/geometry/vector', [
         else
             this.zero(a.length)
 
+    # return itself
+    v
+
