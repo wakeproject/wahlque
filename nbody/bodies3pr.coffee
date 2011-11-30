@@ -52,6 +52,7 @@ define 'cs!/wahlque/nbody/bodies3pr', [
                 (a13x + a23x),
                 (a13y + a23y)
             ]
+        d
 
     # return itself
     b3
