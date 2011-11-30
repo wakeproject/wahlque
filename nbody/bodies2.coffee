@@ -35,3 +35,6 @@ define 'cs!/wahlque/nbody/bodies2', [
                 a12y
             ]
 
+    # return itself
+    b2
+
