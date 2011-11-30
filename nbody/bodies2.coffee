@@ -3,7 +3,10 @@
 
   2-body simulation
 ###
-define 'cs!/wahlque/nbody/bodies2', ['exports', 'cs!/wahlque/units/au'], (b2, au) ->
+define 'cs!/wahlque/nbody/bodies2', [
+   'exports',
+   'cs!/wahlque/units/au'
+], (b2, au) ->
 
     # derivative in current phase space
     b2.derivative = (m1, m2) ->

@@ -3,7 +3,9 @@
 
   n-dimention vector
 ###
-define 'cs!/wahlque/geometry/vector', ['exports'], (v) ->
+define 'cs!/wahlque/geometry/vector', [
+   'exports'
+], (v) ->
 
     # null vector
     v.zero = (n) -> [0 for i in [1..n]]

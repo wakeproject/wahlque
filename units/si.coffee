@@ -3,7 +3,9 @@
 
   SI unit system
 ###
-define 'cs!/wahlque/units/si', ['exports'], (si) ->
+define 'cs!/wahlque/units/si', [
+   'exports'
+], (si) ->
 
     si.G = 6.67348e-11
 

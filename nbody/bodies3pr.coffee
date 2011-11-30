@@ -3,7 +3,10 @@
 
   planar restricted 3-body simulation
 ###
-define 'cs!/wahlque/nbody/bodies3', ['exports', 'cs!/wahlque/units/au'], (b3, au) ->
+define 'cs!/wahlque/nbody/bodies3pr', [
+   'exports',
+   'cs!/wahlque/units/au'
+], (b3, au) ->
 
     # derivative in current phase space
     b3.derivative = (m1, m2) ->
