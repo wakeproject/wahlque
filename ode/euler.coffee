@@ -9,5 +9,3 @@ define 'cs!/wahlque/ode/euler', [
 ], (e, v) ->
 
     e.step = (x, derivative, dt) -> v.add(x, v.expand(derivative(x), dt))
-
-    e
