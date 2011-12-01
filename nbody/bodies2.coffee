@@ -10,7 +10,7 @@ define 'cs!/wahlque/nbody/bodies2', [
 
     # derivative in current phase space
     b2.derivative = (m1, m2) ->
-        (phase) ->
+        d = (phase) ->
             [x1, y1, vx1, vy1, x2, y2, vx2, vy2] = phase
 
             r12 = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2))
@@ -34,4 +34,8 @@ define 'cs!/wahlque/nbody/bodies2', [
                 a12x,
                 a12y
             ]
+        d
+
+    # return itself
+    b2
 

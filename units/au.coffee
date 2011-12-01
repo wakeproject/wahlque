@@ -12,3 +12,5 @@ define 'cs!/wahlque/units/au', [
     au.fromSI_L = (l) -> l / 92955807.273
     au.fromSI_T = (t) -> t / 86400
     au.fromSI_M = (m) -> m / 1.98892e30
+
+    au
