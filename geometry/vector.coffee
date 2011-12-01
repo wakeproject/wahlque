@@ -8,16 +8,16 @@ define 'cs!/wahlque/geometry/vector', [
 ], (v) ->
 
     # null vector
-    v.zero = (n) -> [0 for i in [1..n]]
+    v.zero = (n) -> 0 for i in [1..n]
 
     # vector construction
     v.build = (scalars...) -> scalars
 
     # add operation
-    v.add = (a, b) -> [(a[i] + b[i]) for i in [0...a.length]]
+    v.add = (a, b) -> (a[i] + b[i]) for i in [0...a.length]
 
     # expand operation
-    v.expand = (a, c) -> [e * c for e in a]
+    v.expand = (a, c) -> (e * c) for e in a
 
     # inner product
     v.inner = (a, b) ->
