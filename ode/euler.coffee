@@ -3,11 +3,9 @@
 
   Euler method to solve ODE
 ###
-define 'cs!/wahlque/ode/euler', [
+define [
    'exports',
    'cs!/wahlque/geometry/vector'
 ], (e, v) ->
 
     e.step = (x, derivative, dt) -> v.add(x, v.expand(derivative(x), dt))
-
-    e

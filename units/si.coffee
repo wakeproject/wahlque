@@ -3,7 +3,7 @@
 
   SI unit system
 ###
-define 'cs!/wahlque/units/si', [
+define [
    'exports'
 ], (si) ->
 
@@ -12,5 +12,3 @@ define 'cs!/wahlque/units/si', [
     si.fromAU_L = (l) -> l * 92955807.273
     si.fromAU_T = (t) -> t * 86400
     si.fromAU_M = (m) -> m * 1.98892e30
-
-    si

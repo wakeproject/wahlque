@@ -3,7 +3,9 @@
 
   util methods for url handling
 ###
-define 'cs!/wahlque/util/url', ['exports'], (exports) ->
+define [
+  'exports'
+], (exports) ->
 
     # get all params
     exports.params = (url) ->
@@ -15,6 +17,3 @@ define 'cs!/wahlque/util/url', ['exports'], (exports) ->
         while (e = r.exec(q))
             ps[d(e[1])] = d(e[2])
         ps
-
-    exports
-

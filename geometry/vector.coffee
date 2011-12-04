@@ -3,7 +3,7 @@
 
   n-dimention vector
 ###
-define 'cs!/wahlque/geometry/vector', [
+define [
    'exports'
 ], (v) ->
 
@@ -36,7 +36,4 @@ define 'cs!/wahlque/geometry/vector', [
            v.expand(a, 1/r)
         else
             this.zero(a.length)
-
-    # return itself
-    v
 

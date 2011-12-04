@@ -3,7 +3,7 @@
 
   3-dimention vector
 ###
-define 'cs!/wahlque/geometry/vector3', ['exports'], (v3) ->
+define ['exports'], (v3) ->
 
     # null vector
     v3.ZERO = {
@@ -74,5 +74,3 @@ define 'cs!/wahlque/geometry/vector3', ['exports'], (v3) ->
         }
         else
             v3.ZERO
-
-    v3

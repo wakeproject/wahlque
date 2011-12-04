@@ -3,7 +3,7 @@
 
   2-body simulation
 ###
-define 'cs!/wahlque/nbody/bodies2', [
+define [
    'exports',
    'cs!/wahlque/units/au'
 ], (b2, au) ->
@@ -34,7 +34,3 @@ define 'cs!/wahlque/nbody/bodies2', [
                 a12x,
                 a12y
             ]
-
-    # return itself
-    b2
-

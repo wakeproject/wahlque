@@ -3,7 +3,7 @@
 
   planar restricted 3-body simulation
 ###
-define 'cs!/wahlque/nbody/bodies3pr', [
+define [
    'exports',
    'cs!/wahlque/units/au'
 ], (b3, au) ->
@@ -52,6 +52,3 @@ define 'cs!/wahlque/nbody/bodies3pr', [
                 (a13x + a23x),
                 (a13y + a23y)
             ]
-
-    # return itself
-    b3
