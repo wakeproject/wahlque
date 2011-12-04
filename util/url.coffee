@@ -17,3 +17,5 @@ define [
         while (e = r.exec(q))
             ps[d(e[1])] = d(e[2])
         ps
+
+    exports

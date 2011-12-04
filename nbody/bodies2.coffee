@@ -34,3 +34,5 @@ define [
                 a12x,
                 a12y
             ]
+
+    b2

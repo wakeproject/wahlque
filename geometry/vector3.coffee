@@ -74,3 +74,5 @@ define ['exports'], (v3) ->
         }
         else
             v3.ZERO
+
+    v3
