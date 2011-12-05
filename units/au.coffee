@@ -7,7 +7,7 @@ define [
     'exports'
 ], (au) ->
 
-    au.G = 0.01720209895 * 365.24
+    au.G = 0.01720209895
 
     au.fromSI_L = (l) -> l / 92955807.273
     au.fromSI_T = (t) -> t / 86400
