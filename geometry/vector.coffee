@@ -16,6 +16,13 @@ define [
     # add operation
     v.add = (a, b) -> (a[i] + b[i]) for i in [0...a.length]
 
+    # add all
+    v.addall = (vs...) ->
+        sum = v.zero(vs[0].length)
+        for vec in vs
+            sum = v.add(sum, vec)
+        sum
+
     # expand operation
     v.expand = (a, c) -> (e * c) for e in a
 
