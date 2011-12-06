@@ -5,7 +5,7 @@
 ###
 define [
    'exports',
-   'cs!/wahlque/geometry/vector'
+   'cs!/wahlque/math/geometry/vector'
 ], (e, v) ->
 
     e.solve = (derivative) ->
