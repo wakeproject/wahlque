@@ -8,6 +8,7 @@ define [
    'cs!/wahlque/geometry/vector'
 ], (e, v) ->
 
-    e.step = (t, x, derivative, dt) -> [t + dt, v.add(x, v.expand(derivative(t, x), dt))]
+    e.solve = (derivative) ->
+       (t, x, dt) -> [t + dt, v.add(x, v.expand(derivative(t, x), dt))]
 
     e
