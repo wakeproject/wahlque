@@ -26,10 +26,11 @@ define ['exports'], (v3) ->
     v3.inner = (a, b) -> a[0] * b[0] + a[1] * b[1] + a[2] * b[2]
 
     # cross product
-    v3.cross = (a, b) ->
-        x: a[1] * b[2] - a[2] * b[1]
-        y: a[2] * b[0] - a[0] * b[2]
-        z: a[0] * b[1] - a[1] * b[0]
+    v3.cross = (a, b) -> [
+        a[1] * b[2] - a[2] * b[1]
+        a[2] * b[0] - a[0] * b[2]
+        a[0] * b[1] - a[1] * b[0]
+    ]
 
     # scalar triple product
     v3.triple = (a, b, c) -> v3.inner(a, v3.cross(b, c))
