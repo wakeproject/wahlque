@@ -41,11 +41,11 @@ define ['exports'], (v3) ->
     v3.unify = (a) ->
         r = Math.sqrt(a[0] * a[0] + a[1] * a[1] + a[2] * a[2])
         if r != 0
-        [
-            a[0]/ r
-            a[1]/ r
-            a[2]/ r
-        ]
+            [
+                a[0]/ r
+                a[1]/ r
+                a[2]/ r
+            ]
         else
             this.ZERO
 
@@ -55,17 +55,17 @@ define ['exports'], (v3) ->
         phi = Math.random() * Math.PI * 2
         if r != 0
             if r is undefined
-            [
-                Math.cos(phi) * Math.cos(theta)
-                Math.cos(phi) * Math.sin(theta)
-                Math.sin(phi)
-            ]
+                [
+                    Math.cos(phi) * Math.cos(theta)
+                    Math.cos(phi) * Math.sin(theta)
+                    Math.sin(phi)
+                ]
             else
-            [
-                r * Math.cos(phi) * Math.cos(theta)
-                r * Math.cos(phi) * Math.sin(theta)
-                r * Math.sin(phi)
-            ]
+                [
+                    r * Math.cos(phi) * Math.cos(theta)
+                    r * Math.cos(phi) * Math.sin(theta)
+                    r * Math.sin(phi)
+                ]
         else
             v3.ZERO
 
