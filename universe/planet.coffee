@@ -5,8 +5,9 @@
 ###
 define [
   'exports'
+  'cs!/wahlque/math/geometry/vector3'
   'cs!/wahlque/physics/units/au'
-], (p, au) ->
+], (p, vec3, au) ->
 
     m1 = 1.29
     m2 = 1.1
@@ -31,13 +32,13 @@ define [
         cos = Math.cos(phi)
         sin = Math.sin(phi)
         # by Rodrigues' rotation formula
-        v3.add(v3.expand(base, cos), v3.expand(v3.cross(polar, base), sin));
+        vec3.add(vec3.expand(base, cos), vec3.expand(vec3.cross(polar, base), sin));
 
     # the normal unit zenith vector for any point on the planet surface
     p.zenith = (lng, lat, localtime) ->
         zb = zenithBase(localtime)
-        temp = v3.add(v3.expand(zb, Math.cos(lng)), v3.expand(v3.cross(polar, zb), Math.sin(lng)))
-        axis = v3.cross(polar, temp)
-        v3.add(v3.expand(temp, Math.cos(lat)), v3.expand(v3.cross(axis, temp), Math.sin(lat)))
+        temp = vec3.add(vec3.expand(zb, Math.cos(lng)), vec3.expand(vec3.cross(polar, zb), Math.sin(lng)))
+        axis = vec3.cross(polar, temp)
+        vec3.add(vec3.expand(temp, Math.cos(lat)), vec3.expand(vec3.cross(axis, temp), Math.sin(lat)))
 
     p
