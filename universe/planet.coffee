@@ -4,10 +4,21 @@
   The basic paramters for the planet
 ###
 define [
-   'exports'
-], (p) ->
+  'exports'
+  'cs!/wahlque/physics/units/au'
+], (p, au) ->
+
+    m1 = 1.29
+    m2 = 1.1
+    l = 2.7
+
+    M = m1 + m2
+    v3 =  Math.sqrt(au.G * M / l)
 
     p.radius = 7e+6
+
+    p.initPosition = [0, l] #AU
+    p.initVelocity = [v3, 0] #AU
 
     # polar unit vector
     p.polar = [0.423, 0, 0.906]
