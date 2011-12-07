@@ -10,7 +10,7 @@ define [
 
     m1 = 1.29
     m2 = 1.1
-    l = 2.7
+    l = 2.5
 
     M = m1 + m2
     v3 =  Math.sqrt(au.G * M / l)
