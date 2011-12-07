@@ -40,7 +40,8 @@ define ['exports'], (v3) ->
     # vetcor unification
     v3.unify = (a) ->
         r = Math.sqrt(a[0] * a[0] + a[1] * a[1] + a[2] * a[2])
-        if r != 0 [
+        if r != 0
+        [
             a[0]/ r
             a[1]/ r
             a[2]/ r
@@ -53,12 +54,14 @@ define ['exports'], (v3) ->
         theta = (Math.random() - 0.5) * Math.PI
         phi = Math.random() * Math.PI * 2
         if r != 0
-            if r is undefined [
+            if r is undefined
+            [
                 Math.cos(phi) * Math.cos(theta)
                 Math.cos(phi) * Math.sin(theta)
                 Math.sin(phi)
             ]
-            else [
+            else
+            [
                 r * Math.cos(phi) * Math.cos(theta)
                 r * Math.cos(phi) * Math.sin(theta)
                 r * Math.sin(phi)
