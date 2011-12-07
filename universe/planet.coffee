@@ -38,7 +38,7 @@ define [
     p.zenith = (lng, lat, localtime) ->
         zb = zenithBase(localtime)
         temp = vec3.add(vec3.expand(zb, Math.cos(lng)), vec3.expand(vec3.cross(p.polar, zb), Math.sin(lng)))
-        axis = vec3.cross(polar, temp)
+        axis = vec3.cross(p.polar, temp)
         vec3.add(vec3.expand(temp, Math.cos(lat)), vec3.expand(vec3.cross(axis, temp), Math.sin(lat)))
 
     p
