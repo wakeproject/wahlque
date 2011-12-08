@@ -20,7 +20,7 @@ define [
     length = Math.round(Math.PI * scale * 16777216)
 
     proportion = scale * 16777216 / 5120
-    constant = scale * 257
+    constant = scale * 128
 
     t.seeds = ->
         [8, length,
