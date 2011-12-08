@@ -22,15 +22,18 @@ define [
     proportion = 268435456
     constant = 16
 
-    t.seeds = [4, length,
-        _.map([
-            7103,  7103,  7103,  7103,  7103, # north pole
-            9001,  8011, 12288,  8221,  9001, # north 45
-            8009,  7103,  7741,  8191,  8009, # equator
-            4009,  2251,  7103,  8243,  4009, # south 45
-            9199,  9199,  9199,  9199,  9199, # south pole
-        ], ((elem)-> scale * elem))
-    ]
+    t.seeds = ->
+        [4, length,
+            _.map([
+                7103,  7103,  7103,  7103,  7103, # north pole
+                9001,  8011, 12288,  8221,  9001, # north 45
+                8009,  7103,  7741,  8191,  8009, # equator
+                4009,  2251,  7103,  8243,  4009, # south 45
+                9199,  9199,  9199,  9199,  9199, # south pole
+            ], ((elem)-> scale * elem))
+        ]
+
+    t.resolve = (seeds) -> [seeds[0], _.map(seeds[2], ((elem)-> Math.round(elem/scale)))]
 
     even = (num) -> Math.floor(num / 2) * 2 == num
     odd = (num) -> Math.floor(num / 2) * 2 != num
