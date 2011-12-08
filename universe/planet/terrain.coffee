@@ -19,8 +19,8 @@ define [
     scale = 64
     length = Math.round(Math.PI * scale * 16777216)
 
-    proportion = scale * 16777216 / 3333
-    constant = - scale * 128
+    proportion = scale * 16777216 / Math.PI / 1000
+    constant = - scale * 64
 
     t.seeds = ->
         [8, length,
@@ -42,9 +42,9 @@ define [
 
     residual = 7
     random = (len) ->
-        residual = (residual * 47 + 3) % 64
+        residual = (residual * 47 + 1) % 64
         part = Math.round(len / proportion * residual / 64)
-        residual = (residual * 47 + 3) % 64
+        residual = (residual * 17 + 1) % 64
         Math.round(part + residual * constant / 64)
 
     md = (data) ->
