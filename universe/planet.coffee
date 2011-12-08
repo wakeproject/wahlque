@@ -16,7 +16,8 @@ define [
     M = m1 + m2
     v3 =  Math.sqrt(au.G * M / l)
 
-    p.radius = 7e+6
+    p.radius = 8388608 # SI , and 8388608 = 2^23
+    p.g = 10 # SI
 
     p.initPosition = [0, l] #AU
     p.initVelocity = [v3, 0] #AU
