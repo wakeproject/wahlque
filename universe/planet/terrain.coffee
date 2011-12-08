@@ -52,7 +52,7 @@ define [
         newlen = Math.round(len / 2)
 
         nums = newcount + 1
-        seq = ((2 * i) for i in [0..count]) + ((2 * i + 1) for i in [0...count])
+        seq = _.flatten([((2 * i) for i in [0..count]), ((2 * i + 1) for i in [0...count])])
 
         dspl = []
         for row in seq
