@@ -19,7 +19,7 @@ define [
     scale = 64
     length = Math.round(Math.PI * scale * 16777216)
 
-    proportion = 7
+    proportion = 127
     constant = 47
 
     t.seeds = ->
