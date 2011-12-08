@@ -63,7 +63,7 @@ define [
                 else if row == newcount # south pole
                     dspl[pos] = heights[count * count + count]
                 else if col == newcount # on zero longitude circle
-                    dspl[pos] = dspl[row * nums + col]
+                    dspl[pos] = dspl[row * nums]
                 else if even(row) and even(col)
                     dspl[pos] = heights[row / 2 * (count + 1) + col / 2]
                 else if even(row) and odd(col)
