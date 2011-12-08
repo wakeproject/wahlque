@@ -19,8 +19,8 @@ define [
     scale = 64
     length = Math.round(Math.PI * scale * 16777216)
 
-    proportion = scale * 16777216 / 2048
-    constant = scale * 59
+    proportion = scale * 16777216 / 4096
+    constant = scale * 127
 
     t.seeds = ->
         [8, length,
