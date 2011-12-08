@@ -19,7 +19,7 @@ define [
     scale = 64
     length = Math.round(Math.PI * scale * 16777216)
 
-    proportion = 268435456
+    proportion = 268435456 / 4
     constant = 16
 
     t.seeds = ->
@@ -28,8 +28,8 @@ define [
                 7103,  7103,  7103,  7103,  7103, # north pole
                 9001,  8011, 12288,  8221,  9001, # north 45
                 8009,  7103,  7741,  8191,  8009, # equator
-                4009,  2251,  7103,  8243,  4009, # south 45
-                9199,  9199,  9199,  9199,  9199, # south pole
+                4009, 13288,  7103, 11247,  4009, # south 45
+                6327,  6327,  6327,  6327,  6327, # south pole
             ], ((elem)-> scale * elem))
         ]
 
