@@ -77,6 +77,8 @@ define [
                        ) / 4
                     ) + random(len)
 
+        delete data
+
         [newcount, newlen, dspl]
 
     t.gen = (seeds) -> md(seeds)
