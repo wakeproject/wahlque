@@ -40,12 +40,9 @@ define [
     even = (num) -> Math.floor(num / 2) * 2 == num
     odd = (num) -> Math.floor(num / 2) * 2 != num
 
-    residual = 7
     random = (len) ->
-        residual = (residual * 47 + 1) % 64
-        part = Math.round(len / proportion * residual / 64)
-        residual = (residual * 17 + 1) % 64
-        Math.round(part + residual * constant / 64)
+        part = Math.round(len / proportion * Math.random())
+        Math.round(part + constant * Math.random())
 
     md = (data) ->
         [count, len, heights] = data
