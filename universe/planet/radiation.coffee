@@ -17,6 +17,20 @@ define [
     l2 = b.luminosity
     sc = si.solarConst
     cut = (val) -> val > 0 ? val : 0
+    lng = (i) -> 2 * Math.PI / 256 * i
+    lat = (j) -> Math.PI / 256 * (128 - j)
+
+    da = 2 * Math.PI / 256 / 2
+    dC = (lat) ->
+        if Math.abs(Math.PI / 2 - Math.abs(lat)) < da
+            Math.PI * da * da * 256 * p.radius * p.radius
+        else
+           2 * Math.PI * (Math.cos(lat - da) + Math.cos(lat + da)) * da * da * 256 * p.radius * p.radius
+    circle = (dC(lat(j)) for j in [0...256])
+    S = 0
+    for val in circle
+        S += val
+    ratio = (val/S for val in circle)
 
     r.total = (time, x) ->
         [x1, y1, x2, y2, x3, y3] = x
@@ -40,7 +54,7 @@ define [
         ltime = wau.fromAU_T(time)
 
         (lng, lat) ->
-            sc * lum2 * cut(vec3.inner(p.zenith(lng, lat, ltime), u2))
+            lum2 * cut(vec3.inner(p.zenith(lng, lat, ltime), u2))
 
     r.energyIn = (time, x) ->
         [x1, y1, x2, y2, x3, y3] = x
@@ -55,13 +69,28 @@ define [
             e2 = sc * lum2 * cut(vec3.inner(p.zenith(lng, lat, ltime), u2))
             e1 + e2
 
-    lng = (i) -> 2 * Math.PI / 256 * i
     r.averageIn = (time, x) ->
-        (lat) ->
-            scatter = (r.energyIn(time, x)(lng(i) ,lat) for i in [0...256])
+        energy = r.energyIn(time, x)
+        matrix = (
+            (
+                energy(lng(i), lat(j)) * circle[i] for j in [0...256]
+            ) for i in [0...256]
+        )
+
+        sum = 0
+        for i in [0...256]
+            for j in [0...256]
+                sum += matrix[i][j]
+
+        scale = sum / r.total(time, x) / sc / Math.PI / p.radius / p.radius
+
+        vector = []
+        for i in [0...256]
+            row = matrix[i]
             sum = 0
-            for t in scatter
-                sum += t
-            sum / 256
+            for j in [0...256]
+                sum += (matrix[i][j] / scale)
+            vector[i] = sum
+        vector
 
     r

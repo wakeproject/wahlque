@@ -11,7 +11,7 @@ define [
 
     m1 = 1.29
     m2 = 1.1
-    l = 2.3
+    l = 2.8
 
     M = m1 + m2
     v3 =  Math.sqrt(au.G * M / l)
@@ -23,7 +23,7 @@ define [
     p.initVelocity = [v3, 0] #AU
 
     # polar unit vector
-    p.polar = [0.423, 0, 0.906]
+    p.polar = [0.342, 0, 0.940]
 
     # base zenith unit vector for lng = 0, lat = 0
     base = [0, 1, 0] # initial base zenith unit vector, change over localtime
