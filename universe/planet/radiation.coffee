@@ -58,10 +58,10 @@ define [
     lng = (i) -> 2 * Math.PI / 256 * i
     r.averageIn = (time, x) ->
         (lat) ->
-            scatter = r.energyIn(time, x)(lng(i) ,lat) for i in [0...512]
+            scatter = (r.energyIn(time, x)(lng(i) ,lat) for i in [0...256])
             sum = 0
             for t in scatter
                 sum += t
-            sum / 512
+            sum / 256
 
     r
