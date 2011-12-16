@@ -20,17 +20,14 @@ define [
     lng = (i) -> 2 * Math.PI / 256 * i
     lat = (j) -> Math.PI / 256 * (128 - j)
 
-    da = 2 * Math.PI / 256 / 2
+    da = Math.PI / 256
     dC = (lat) ->
-        if Math.abs(Math.PI / 2 - Math.abs(lat)) < da
-            Math.PI * da * da * 256 * p.radius * p.radius
-        else
-           2 * Math.PI * (Math.cos(lat - da) + Math.cos(lat + da)) * da * da * 256 * p.radius * p.radius
-    circle = (dC(lat(j)) for j in [0...256])
+        Math.PI * p.radius * 2 * p.radius / 256 / 256
+    coeff = (dC(lat(j)) for j in [0...256])
     S = 0
-    for val in circle
+    for val in coeff
         S += val
-    ratio = (val/S for val in circle)
+    ratio = (val/S for val in coeff)
 
     r.total = (time, x) ->
         [x1, y1, x2, y2, x3, y3] = x
@@ -73,7 +70,7 @@ define [
         energy = r.energyIn(time, x)
         matrix = (
             (
-                energy(lng(i), lat(j)) * circle[i] for j in [0...256]
+                energy(lng(i), lat(j)) * coeff[i] for j in [0...256]
             ) for i in [0...256]
         )
 
@@ -82,15 +79,14 @@ define [
             for j in [0...256]
                 sum += matrix[i][j]
 
-        scale = sum / r.total(time, x) / sc / Math.PI / p.radius / p.radius
-
         vector = []
         for i in [0...256]
             row = matrix[i]
             sum = 0
             for j in [0...256]
-                sum += (matrix[i][j] / scale)
+                sum += matrix[i][j]
             vector[i] = sum
+
         vector
 
     r
