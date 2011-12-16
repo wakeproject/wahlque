@@ -16,7 +16,11 @@ define [
     l1 = a.luminosity
     l2 = b.luminosity
     sc = si.solarConst
-    cut = (val) -> val > 0 ? val : 0
+    cut = (val) ->
+        if val > 0
+            val
+        else
+            0
     lng = (i) -> 2 * Math.PI / 256 * i
     lat = (j) -> Math.PI / 256 * (128 - j)
 
@@ -73,11 +77,6 @@ define [
                 energy(lng(i), lat(j)) * coeff[i] for j in [0...256]
             ) for i in [0...256]
         )
-
-        sum = 0
-        for i in [0...256]
-            for j in [0...256]
-                sum += matrix[i][j]
 
         vector = []
         for i in [0...256]

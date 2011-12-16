@@ -5,8 +5,10 @@
 ###
 define [
     'exports'
-], (wau) ->
+    'cs!/wahlque/physics/units/si'
+    'cs!/wahlque/universe/planet/planet'
+], (wau, si, p) ->
 
-    wau.fromAU_T = (t) -> t * 24 / 23
+    wau.fromAU_T = (t) -> t * si.fromAU_T(1) / p.period
 
     wau

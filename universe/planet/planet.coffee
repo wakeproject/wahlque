@@ -17,6 +17,7 @@ define [
     v3 =  Math.sqrt(au.G * M / l)
 
     p.radius = 8388608 # SI , and 8388608 = 2^23
+    p.period = 30 * 3600 # SI
     p.g = 10 # SI
 
     p.initPosition = [0, l] #AU
