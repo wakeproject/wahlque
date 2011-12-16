@@ -7,24 +7,18 @@ define [
   'exports'
   'cs!/wahlque/math/geometry/vector3'
   'cs!/wahlque/physics/units/au'
-], (p, vec3, au) ->
+  'cs!/wahlque/universe/solar/system'
+], (p, vec3, au, s) ->
 
-    m1 = 1.29
-    m2 = 1.1
-    l = 2.2
+    p.initPosition = s.p3 #AU
+    p.initVelocity = s.v3 #AU
 
-    M = m1 + m2
-    v3 =  Math.sqrt(au.G * M / l)
-
-    p.radius = 8388608 # SI , and 8388608 = 2^23
-    p.period = 30 * 3600 # SI
+    p.radius = 6378100 # SI
+    p.period = 24 * 3600 # SI
     p.g = 10 # SI
 
-    p.initPosition = [0, l] #AU
-    p.initVelocity = [v3, 0] #AU
-
     # polar unit vector
-    p.polar = [0.342, 0, 0.940]
+    p.polar = [0.398, 0, 0.917]
 
     # base zenith unit vector for lng = 0, lat = 0
     base = [0, 1, 0] # initial base zenith unit vector, change over localtime
