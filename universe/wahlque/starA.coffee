@@ -5,9 +5,8 @@
 ###
 define [
   'exports'
-  'cs!/wahlque/physics/units/au'
   'cs!/wahlque/universe/wahlque/system'
-], (exports, au, s) ->
+], (exports, s) ->
 
     exports.initPosition = s.p1 #AU
     exports.initVelocity = s.v1 #AU
