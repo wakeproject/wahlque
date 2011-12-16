@@ -8,9 +8,9 @@ define [
     'cs!/wahlque/math/geometry/vector3'
     'cs!/wahlque/physics/units/si'
     'cs!/wahlque/physics/units/wau'
-    'cs!/wahlque/universe/starA'
-    'cs!/wahlque/universe/starB'
-    'cs!/wahlque/universe/planet/planet'
+    'cs!/wahlque/universe/wahlque/starA'
+    'cs!/wahlque/universe/wahlque/starB'
+    'cs!/wahlque/universe/wahlque/planet/planet'
 ], (r, vec3, si, wau, a, b, p) ->
 
     l1 = a.luminosity
