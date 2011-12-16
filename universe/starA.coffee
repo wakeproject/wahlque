@@ -11,6 +11,7 @@ define [
     m1 = 1.29
     m2 = 1.1
     a = 1.5
+
     M = m1 + m2
     x1 = m2 / M * a
     v  = Math.sqrt(au.G * M / a)
