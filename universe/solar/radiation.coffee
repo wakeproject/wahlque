@@ -7,9 +7,9 @@ define [
     'exports'
     'cs!/wahlque/math/geometry/vector3'
     'cs!/wahlque/physics/units/si'
-    'cs!/wahlque/universe/wahlque/sun'
-    'cs!/wahlque/universe/wahlque/jupiter'
-    'cs!/wahlque/universe/wahlque/earth'
+    'cs!/wahlque/universe/solar/sun'
+    'cs!/wahlque/universe/solar/jupiter'
+    'cs!/wahlque/universe/solar/earth'
 ], (r, vec3, si, a, b, p) ->
 
     l1 = a.luminosity
