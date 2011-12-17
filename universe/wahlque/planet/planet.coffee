@@ -14,7 +14,7 @@ define [
     p.initVelocity = s.v3 #AU
 
     p.radius = 8388608 # SI , and 8388608 = 2^23
-    p.period = 30 * 3600 # SI
+    p.period = 23 * 3600 # SI
     p.g = 10 # SI
 
     # polar unit vector
