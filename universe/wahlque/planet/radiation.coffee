@@ -26,7 +26,7 @@ define [
 
     da = Math.PI / 256
     dC = (lat) ->
-        Math.PI * p.radius * 2 * p.radius / 256 / 256
+        2 * Math.PI * p.radius * 2 * p.radius / 256 / 256
     coeff = (dC(lat(j)) for j in [0...256])
     S = 0
     for val in coeff
