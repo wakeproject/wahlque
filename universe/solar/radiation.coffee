@@ -73,7 +73,7 @@ define [
         energy = r.energyIn(time, x)
         matrix = (
             (
-                energy(lng(i), lat(j)) * coeff[i] for j in [0...256]
+                energy(lng(j), lat(i)) * coeff[i] for j in [0...256]
             ) for i in [0...256]
         )
 
@@ -82,7 +82,7 @@ define [
             row = matrix[i]
             sum = 0
             for j in [0...256]
-                sum += matrix[i][j]
+                sum += row[j]
             vector[i] = sum
 
         vector
