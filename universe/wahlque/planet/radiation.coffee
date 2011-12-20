@@ -22,7 +22,7 @@ define [
         else
             0
     lng = (i) -> 2 * Math.PI / 256 * i
-    lat = (j) -> Math.PI / 256 * (128 - j)
+    lat = (j) -> Math.asin((128 - j) / 128)
 
     da = Math.PI / 256
     dC = (lat) ->
