@@ -5,8 +5,8 @@
 ###
 define [
   'exports'
-  'cs!/wahlque/physics/units/au'
-  'cs!/wahlque/universe/solar/system'
+  'cs!../../physics/units/au'
+  'cs!./system'
 ], (exports, au, s) ->
 
     exports.initPosition = s.p2 #AU

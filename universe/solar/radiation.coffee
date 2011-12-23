@@ -5,11 +5,11 @@
 ###
 define [
     'exports'
-    'cs!/wahlque/math/geometry/vector3'
-    'cs!/wahlque/physics/units/si'
-    'cs!/wahlque/universe/solar/sun'
-    'cs!/wahlque/universe/solar/jupiter'
-    'cs!/wahlque/universe/solar/earth'
+    'cs!../../math/geometry/vector3'
+    'cs!../../physics/units/si'
+    'cs!./sun'
+    'cs!./jupiter'
+    'cs!./earth'
 ], (r, vec3, si, a, b, p) ->
 
     l1 = a.luminosity

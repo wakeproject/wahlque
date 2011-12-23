@@ -5,9 +5,9 @@
 ###
 define [
   'exports'
-  'cs!/wahlque/math/geometry/vector3'
-  'cs!/wahlque/physics/units/au'
-  'cs!/wahlque/universe/solar/system'
+  'cs!../../math/geometry/vector3'
+  'cs!../../physics/units/au'
+  'cs!/./system'
 ], (p, vec3, au, s) ->
 
     p.initPosition = s.p3 #AU

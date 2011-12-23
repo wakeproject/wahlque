@@ -5,7 +5,7 @@
 ###
 define [
    'exports',
-   'cs!/wahlque/math/geometry/vector'
+   'cs!../geometry/vector'
 ], (e, vec) ->
 
     e.solve = (acceleration) ->

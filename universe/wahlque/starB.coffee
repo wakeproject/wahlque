@@ -5,7 +5,7 @@
 ###
 define [
   'exports'
-  'cs!/wahlque/universe/wahlque/system'
+  'cs!./system'
 ], (exports, s) ->
 
     exports.mass = s.m2 #AU

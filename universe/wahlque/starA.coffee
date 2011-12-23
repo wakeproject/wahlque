@@ -5,7 +5,7 @@
 ###
 define [
   'exports'
-  'cs!/wahlque/universe/wahlque/system'
+  'cs!./system'
 ], (exports, s) ->
 
     exports.initPosition = s.p1 #AU

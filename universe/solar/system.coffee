@@ -5,7 +5,7 @@
 ###
 define [
   'exports'
-  'cs!/wahlque/physics/units/au'
+  'cs!../../physics/units/au'
 ], (s, au) ->
 
     m1 = 1
