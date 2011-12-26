@@ -7,7 +7,7 @@ define [
   'exports'
   'cs!../../math/geometry/vector3'
   'cs!../../physics/units/au'
-  'cs!/./system'
+  'cs!./system'
 ], (p, vec3, au, s) ->
 
     p.initPosition = s.p3 #AU
