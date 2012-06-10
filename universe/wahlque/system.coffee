@@ -57,8 +57,8 @@ define [
         s.lum2 = lum2 / D23
         s.u1 = vec3.unify([x_1 - x_3, y_1 - y_3, 0])
         s.u2 = vec3.unify([x_2 - x_3, y_2 - y_3, 0])
-        s.K = (m1 * (vx_1 * vx_1 + vy_1 * vy_1) + m2 * (vx_2 * vx_2 + vy_2 * vy_2) + m3 * (vx_3 * vx_3 + vy_3 * vy_3)) / 2
-        s.U = - au.G * (m1 * m2 / Math.sqrt(D12) + m1 * m3 / Math.sqrt(D13) + m2 * m3 / Math.sqrt(D23))
+        s.K = (m1 * (vx_1 * vx_1 + vy_1 * vy_1) + m2 * (vx_2 * vx_2 + vy_2 * vy_2)) / 2
+        s.U = - au.G * m1 * m2 / Math.sqrt(D12)
         s.E = s.K + s.U
 
     s
