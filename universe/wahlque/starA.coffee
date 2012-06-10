@@ -13,6 +13,6 @@ define [
     exports.mass = s.m1 #AU
 
     exports.diameter = 1.392e+9 #SI
-    exports.luminosity = 2.7 # based on Sun's luminosity
+    exports.luminosity = s.lum1 # based on Sun's luminosity
 
     exports
