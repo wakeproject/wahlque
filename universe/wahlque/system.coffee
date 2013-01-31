@@ -6,9 +6,9 @@
 define [
   'exports'
   'cs!../../physics/units/au'
-  'cs!/wahlque/math/ode/verlet'
-  'cs!/wahlque/math/geometry/vector3'
-  'cs!/wahlque/physics/nbody/bodies3pr'
+  'cs!../../math/ode/verlet'
+  'cs!../../math/geometry/vector3'
+  'cs!../../physics/nbody/bodies3pr'
 ], (s, au, solver, vec3, b3) ->
 
     m1 = 1.29
