@@ -5,7 +5,7 @@ define [
   'underscore'
 ], (_) ->
 
-    (maniford, tao) ->
+    (grid) ->
         reg = {}
         env = {}
         gen = []
@@ -15,12 +15,12 @@ define [
         def: (name, dependencies..., F) ->
             reg[name] = (t, position) ->
                 env[name] = env[name] or {}
-                times = Math.floor(t / tao).toString()
-                index = maniford.indexOf(position)
+                times = Math.floor(t / grid.tao).toString()
+                index = grid.indexOf(position)
                 frame = env[name][times]
                 if not frame
                     frame = []
-                    for i in [1...maniford.size()]
+                    for i in [1...grid.size()]
                         frame.push null
                     env[name][times] = frame
                     gen.push times
